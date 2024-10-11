@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:austrotalk/presentation/pages/botNav/bottom_nav.dart';
 import 'package:austrotalk/presentation/pages/home/home_page.dart';
+import 'package:austrotalk/presentation/pages/login/login_page.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -37,7 +38,7 @@ class _SplashPageState extends State<SplashPage>
     Timer(Duration(seconds: 2),()
     {
       Navigator.pushReplacement(context, MaterialPageRoute(builder: (context){
-        return BottomNav();
+        return LoginPage();
       }));
     });
   }

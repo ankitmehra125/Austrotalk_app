@@ -1,3 +1,4 @@
+import 'package:austrotalk/presentation/pages/login/login_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -65,7 +66,14 @@ class CustomDrawer extends StatelessWidget {
                   drawerItem("assets/images/drawer_images/idea.svg", "Chat with Astrologers", null, 18),
                   drawerItem("assets/images/drawer_images/priest.svg", "Talk to Panditji", null, 22),
                   drawerItem("assets/images/drawer_images/free.svg", "Free Services", null, 18),
-                  drawerItem("assets/images/drawer_images/login.svg", "Login", null, 16),
+                  GestureDetector(
+                      onTap: ()
+                      {
+                        Navigator.pushReplacement(context, MaterialPageRoute(builder: (context){
+                          return LoginPage();
+                        }));
+                      },
+                      child: drawerItem("assets/images/drawer_images/login.svg", "Login", null, 16)),
                 ],
               ),
             ),
