@@ -56,7 +56,6 @@ class _LanguageChangeDialogState extends State<LanguageChangeDialog> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
                 "Choose your app language",
@@ -66,6 +65,7 @@ class _LanguageChangeDialogState extends State<LanguageChangeDialog> {
                   fontFamily: 'SatoshiBold',
                 ),
               ),
+              Expanded(child: SizedBox()),
               IconButton(
                 onPressed: () {
                   Navigator.pop(context);

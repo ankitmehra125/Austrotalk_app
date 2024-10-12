@@ -37,7 +37,7 @@ class MyApp extends StatelessWidget {
           create: (context) => LanguageBloc(),
         ),
       ],
-      child: MaterialApp(
+      child: const MaterialApp(
         debugShowCheckedModeBanner: false,
         home: SplashPage(),
       ),

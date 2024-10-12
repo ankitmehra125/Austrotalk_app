@@ -49,7 +49,7 @@ class _BottomNavState extends State<BottomNav> {
             },
             selectedLabelStyle: const TextStyle(
               fontFamily: 'SatoshiRegular',
-              fontSize: 13,
+              fontSize: 12,
               color: Colors.black,
             ),
             unselectedLabelStyle: const TextStyle(
@@ -62,41 +62,41 @@ class _BottomNavState extends State<BottomNav> {
               BottomNavigationBarItem(
                 icon: state.selectedIndex == 0 ? SvgPicture.asset(
                   "assets/images/bottomnav_images/selected_home.svg",
-                  width: 20,
+                  width: 18,
                 ) : SvgPicture.asset(
                   "assets/images/bottomnav_images/unchecked_home.svg",
-                  width: 20,
+                  width: 18,
                 ),
                 label: "Home",
               ),
               BottomNavigationBarItem(
                 icon: state.selectedIndex == 1 ? SvgPicture.asset(
                   "assets/images/bottomnav_images/selected_chat.svg",
-                  width: 20,
+                  width: 18,
                 ) : SvgPicture.asset(
                   "assets/images/bottomnav_images/unselected_chat.svg",
-                  width: 20,
+                  width: 18,
                 ),
                 label: "Chat",
               ),
               BottomNavigationBarItem(
                 icon: state.selectedIndex == 2 ? SvgPicture.asset(
                   "assets/images/bottomnav_images/selected_live.svg",
-                  width: 22,
+                  width: 20,
                 ) : SvgPicture.asset(
                   "assets/images/bottomnav_images/unselected_live.svg",
-                  width: 20,
+                  width: 18,
                 ),
                 label: "Live",
               ),
               BottomNavigationBarItem(
-                icon: state.selectedIndex == 3 ?  Icon(CupertinoIcons.phone_fill,color: Colors.black,) : Icon(CupertinoIcons.phone,size: 22,),
+                icon: state.selectedIndex == 3 ?  Icon(CupertinoIcons.phone_fill,color: Colors.black,size: 20,) : Icon(CupertinoIcons.phone,size: 20,),
                 label: "Call",
               ),
               BottomNavigationBarItem(
                 icon: SvgPicture.asset(
                   "assets/images/bottomnav_images/unseleted_remedies.svg",
-                  width: 20,
+                  width: 18,
                 ),
                 label: "Remedies",
               ),

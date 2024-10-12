@@ -1,5 +1,6 @@
 import 'package:austrotalk/presentation/pages/botNav/bottom_nav.dart';
 import 'package:austrotalk/presentation/pages/home/home_page.dart';
+import 'package:austrotalk/presentation/pages/otp/otp_page.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart'; // For input formatters
@@ -16,41 +17,6 @@ class _LoginPageState extends State<LoginPage> {
   String selectedCountryCode = '+91';
   final TextEditingController phoneNoController = TextEditingController();
 
-  FirebaseAuth auth = FirebaseAuth.instance;
-  String verificationId = '';
-
-  void getOtp() async
-  {
-    String phoneNumber = selectedCountryCode + phoneNoController.text.trim();
-
-    await auth.verifyPhoneNumber(
-      phoneNumber: phoneNumber,
-      verificationCompleted: (PhoneAuthCredential credential) async
-        {
-          await auth.signInWithCredential(credential);
-        },
-      verificationFailed: (FirebaseAuthException e) {
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text("Verification Failed, Error: ${e.message.toString()}"),)
-        );
-      },
-      codeSent: (String verificationId, int? resendToken) {
-        setState(() {
-          this.verificationId = verificationId;
-        });
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text("OTP Sent to $phoneNumber")),
-        );
-      },
-      codeAutoRetrievalTimeout: (String verificationId) {
-        // Auto retrieval timeout (if Google Play Services is not available)
-        setState(() {
-          this.verificationId = verificationId;
-        });
-      },
-    );
-  }
-
   @override
   Widget build(BuildContext context) {
     var mQuery = MediaQuery.of(context);
@@ -61,23 +27,21 @@ class _LoginPageState extends State<LoginPage> {
         surfaceTintColor: Colors.white,
         actions: [
           Padding(
-            padding: EdgeInsets.only(
-              right: 16
-            ),
+            padding: EdgeInsets.only(right: 16),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 GestureDetector(
-                  onTap:()
-                  {
-                    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context){
+                  onTap: () {
+                    Navigator.pushReplacement(context,
+                        MaterialPageRoute(builder: (context) {
                       return BottomNav();
                     }));
                   },
-                  child: Text("Skip",style: TextStyle(
-                    fontFamily: 'SatoshiMedium',
-                    fontSize: 16
-                  ),),
+                  child: Text(
+                    "Skip",
+                    style: TextStyle(fontFamily: 'SatoshiMedium', fontSize: 16),
+                  ),
                 )
               ],
             ),
@@ -89,7 +53,8 @@ class _LoginPageState extends State<LoginPage> {
         children: [
           Center(
             child: Container(
-              width: mQuery.size.width * 0.9, // Set container width
+              width: mQuery.size.width * 0.9,
+              // Set container width
               height: 55,
               padding: EdgeInsets.symmetric(horizontal: 16),
               decoration: BoxDecoration(
@@ -115,11 +80,13 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                     onChanged: (code) {
                       setState(() {
-                        selectedCountryCode = code.dialCode!; // Update selected country code
+                        selectedCountryCode =
+                            code.dialCode!; // Update selected country code
                       });
                     },
                     initialSelection: 'IN',
-                    favorite: ['+91', 'IN'], // Default to India
+                    favorite: ['+91', 'IN'],
+                    // Default to India
                     showCountryOnly: false,
                     showFlag: true,
                     showOnlyCountryWhenClosed: false,
@@ -189,9 +156,17 @@ class _LoginPageState extends State<LoginPage> {
           ),
           SizedBox(height: mQuery.size.height * 0.036),
           GestureDetector(
-            onTap: ()
-            {
-              getOtp();
+            onTap: () async {
+              await FirebaseAuth.instance.verifyPhoneNumber(
+                  verificationCompleted: (PhoneAuthCredential credential) {},
+                  verificationFailed: (FirebaseAuthException ex) {},
+                  codeSent: (String verificationId, int? resendToken) {
+                    Navigator.push(context, MaterialPageRoute(builder: (context){
+                      return OtpPage(verificationId: verificationId,);
+                    }));
+                  },
+                  codeAutoRetrievalTimeout: (String verificationId) {},
+                  phoneNumber: phoneNoController.text.toString());
             },
             child: Container(
               width: mQuery.size.width * 0.9,
