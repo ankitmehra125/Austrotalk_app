@@ -1,0 +1,20 @@
+{
+  "astrologers": [
+    {
+      "imageURL": "https://firebasestorage.googleapis.com/v0/b/astrotalk-b453c.appspot.com/o/astrologers_images%2FmadhuPriya.png?alt=media",
+      "name": "Madhu Priya",
+      "type": "Numerology, Western, Tarot",
+      "languages": "English,Hindi,Telugu",
+      "exp": 6,
+      "price": 25
+    },
+    {
+      "imageURL": "https://firebasestorage.googleapis.com/v0/b/astrotalk-b453c.appspot.com/o/astrologers_images%2Fsunil.jpg?alt=media",
+      "name": "Sunil Singh",
+      "type": "Vedic, Palmistry, Face Reading",
+      "languages": "English,Hindi,Sanskrit",
+      "exp": 7,
+      "price": 35
+    }
+  ]
+}

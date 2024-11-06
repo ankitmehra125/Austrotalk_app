@@ -1,8 +1,9 @@
+import 'package:austrotalk/styles/text_style.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class FloatingContainer extends StatelessWidget {
-  final String title;
+  final Text title;
   final Color color;
   final SvgPicture svg;
 
@@ -26,14 +27,10 @@ class FloatingContainer extends StatelessWidget {
           children: [
             svg,
             SizedBox(width: mQuery.size.width*0.02,),
-            Text(
-              title,
-              style: TextStyle(
-                  color: Colors.black,
-                  fontFamily: 'SatoshiMedium',
-                  fontSize: 11,
-              ),
-            ),
+            DefaultTextStyle(
+              style: TextStyles.floatingText,
+              child: title,
+            )
           ],
         ),
       ),

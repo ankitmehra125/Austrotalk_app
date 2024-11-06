@@ -47,29 +47,29 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyDG88urcU42vr_s1ggNgO1mnL1ew3pPF74',
-    appId: '1:287843617963:web:24e1f508a7397e83e73bee',
-    messagingSenderId: '287843617963',
-    projectId: 'astrotalk-5f339',
-    authDomain: 'astrotalk-5f339.firebaseapp.com',
-    storageBucket: 'astrotalk-5f339.appspot.com',
-    measurementId: 'G-65W9DW10RB',
+    apiKey: 'AIzaSyBa_rEtH57eZ2afYq9QKidEpb3uM7gdHXE',
+    appId: '1:368363648247:web:0ed2447038259e9cef0ff2',
+    messagingSenderId: '368363648247',
+    projectId: 'astrotalk-b453c',
+    authDomain: 'astrotalk-b453c.firebaseapp.com',
+    storageBucket: 'astrotalk-b453c.firebasestorage.app',
+    measurementId: 'G-N5NQLCPPXH',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyB02xWaX7i4LxanDVBAraMlHPHiSsWKkl8',
-    appId: '1:287843617963:android:3d002f367a11e332e73bee',
-    messagingSenderId: '287843617963',
-    projectId: 'astrotalk-5f339',
-    storageBucket: 'astrotalk-5f339.appspot.com',
+    apiKey: 'AIzaSyAhIGoRMCQfK3PhId6-0-gcMrY8-_jccfU',
+    appId: '1:368363648247:android:0692c3409ae96d7fef0ff2',
+    messagingSenderId: '368363648247',
+    projectId: 'astrotalk-b453c',
+    storageBucket: 'astrotalk-b453c.firebasestorage.app',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyCbPEXCbbffbiCMvlgmF4z1YM1ETlG61FM',
-    appId: '1:287843617963:ios:a6940ca159367553e73bee',
-    messagingSenderId: '287843617963',
-    projectId: 'astrotalk-5f339',
-    storageBucket: 'astrotalk-5f339.appspot.com',
+    apiKey: 'AIzaSyBp3H55NzwzoTarX3DWwPtYlEY4d1ix5xQ',
+    appId: '1:368363648247:ios:3ead330586a0cf63ef0ff2',
+    messagingSenderId: '368363648247',
+    projectId: 'astrotalk-b453c',
+    storageBucket: 'astrotalk-b453c.firebasestorage.app',
     iosBundleId: 'com.example.austrotalk',
   );
 }

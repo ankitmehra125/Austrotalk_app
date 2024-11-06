@@ -1,13 +1,13 @@
 {
   "project_info": {
-    "project_number": "287843617963",
-    "project_id": "astrotalk-5f339",
-    "storage_bucket": "astrotalk-5f339.appspot.com"
+    "project_number": "368363648247",
+    "project_id": "astrotalk-b453c",
+    "storage_bucket": "astrotalk-b453c.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:287843617963:android:3d002f367a11e332e73bee",
+        "mobilesdk_app_id": "1:368363648247:android:0692c3409ae96d7fef0ff2",
         "android_client_info": {
           "package_name": "com.example.austrotalk"
         }
@@ -15,7 +15,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyB02xWaX7i4LxanDVBAraMlHPHiSsWKkl8"
+          "current_key": "AIzaSyAhIGoRMCQfK3PhId6-0-gcMrY8-_jccfU"
         }
       ],
       "services": {

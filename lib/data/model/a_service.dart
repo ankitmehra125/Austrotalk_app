@@ -4,8 +4,8 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 class AService
 {
-  final String title;
-  final String title2;
+  final Text title;
+  final Text title2;
   final SvgPicture picture;
 
   AService({

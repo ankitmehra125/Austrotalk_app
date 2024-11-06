@@ -25,13 +25,13 @@ class _LanguageChangeDialogState extends State<LanguageChangeDialog> {
   Widget build(BuildContext context) {
     print("Build 1");
     var mQuery = MediaQuery.of(context);
-    List<Map<String, String>> languageData = [
-      {"code": "ENG", "name": "English"},
-      {"code": "हिन्दी", "name": "Hindi"},
-      {"code": "ਪੰਜਾਬੀ", "name": "Punjabi"},
-      {"code": "ਮਰਾਠੀ", "name": "Marathi"},
-      {"code": "ਤੇਲਗੂ", "name": "Telugu"},
-      {"code": "ਕੰਨੜ", "name": "Kannada"},
+    final List<Map<String, String>> languageData = [
+      {"code": "en", "name": "English"},
+      {"code": "hi", "name": "हिन्दी"},
+      {"code": "pa", "name": "ਪੰਜਾਬੀ"},
+      {"code": "mr", "name": "मराठी"},
+      {"code": "te", "name": "తెలుగు"},
+      {"code": "kn", "name": "ಕನ್ನಡ"},
     ];
 
     return BlocBuilder<LanguageBloc, LanguageState>(

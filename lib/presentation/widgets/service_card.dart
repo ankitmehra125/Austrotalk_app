@@ -1,4 +1,6 @@
+import 'package:austrotalk/constants/custom_colors.dart';
 import 'package:austrotalk/data/model/a_service.dart';
+import 'package:austrotalk/styles/text_style.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -14,30 +16,28 @@ class ServiceCard extends StatelessWidget {
         Container(
           width: 75,
           height: 75,
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
             shape: BoxShape.circle,
-            color: Colors.yellow
+            color: AppColor.componentsColor
           ),
           child: Center(
             child: service.picture,
           ),
         ),
-        SizedBox(height: 6,),
+        const SizedBox(height: 6,),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(service.title,
-              style: TextStyle(
-                  fontFamily: 'SatoshiRegular',
-                  fontSize: 12
-              ),),
+            DefaultTextStyle(
+                style:  TextStyles.regularTextSmall,
+                child: service.title,
+            )
           ],
         ),
-        Text(service.title2,
-          style: TextStyle(
-              fontFamily: 'SatoshiRegular',
-              fontSize: 12
-          ),),
+        DefaultTextStyle(
+          style:  TextStyles.regularTextSmall,
+          child: service.title2,
+        )
       ],
     );
   }

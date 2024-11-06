@@ -1,4 +1,5 @@
 import 'package:austrotalk/data/model/chat.dart';
+import 'package:austrotalk/styles/text_style.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
@@ -16,11 +17,11 @@ class _ChatCardState extends State<ChatCard> {
     var mQuery = MediaQuery.of(context);
     return Container(
       width: double.infinity,
-      padding: EdgeInsets.symmetric(
+      padding: const EdgeInsets.symmetric(
         horizontal: 16,
         vertical: 8
       ),
-      margin: EdgeInsets.only(
+      margin: const EdgeInsets.only(
         left: 16, right: 16, top: 16
       ),
       decoration: BoxDecoration(
@@ -31,7 +32,7 @@ class _ChatCardState extends State<ChatCard> {
             color: Colors.grey.withOpacity(0.3),
             spreadRadius: 0,
             blurRadius: 7,
-            offset: Offset(0,0)
+            offset: const Offset(0,0)
           )
         ]
       ),
@@ -42,7 +43,7 @@ class _ChatCardState extends State<ChatCard> {
             children: [
               CircleAvatar(
                 radius: 24,
-                backgroundImage: widget.chat.image,
+                backgroundImage: NetworkImage(widget.chat.imageURL), // Load image from URL
               ),
               SizedBox(height: mQuery.size.height*0.01,),
               RatingBar.builder(
@@ -52,13 +53,13 @@ class _ChatCardState extends State<ChatCard> {
                 allowHalfRating: true,
                 itemSize: 12,
                 itemCount: 5,
-                itemBuilder: (context, _) => Icon(
+                itemBuilder: (context, _) => const Icon(
                   Icons.star,
                   size: 5,
                   color: Colors.amber,
                 ),
                 onRatingUpdate: (rating) {
-                  print(rating);
+                  // print(rating);
                 },
               ),
             ],
@@ -67,34 +68,20 @@ class _ChatCardState extends State<ChatCard> {
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(widget.chat.name,style: TextStyle(
-                fontFamily: 'SatoshiBold'
-              ),),
-              Text(widget.chat.type,style: TextStyle(
-                fontFamily: 'SatoshiRegular',
-                fontSize: 12
-              ),),
-              Text(widget.chat.languages,style: TextStyle(
-                  fontFamily: 'SatoshiRegular',
-                  fontSize: 12
-              ),),
-              Text("EXp: ${widget.chat.exp.toString()} Years",style: TextStyle(
-                  fontFamily: 'SatoshiRegular',
-                  fontSize: 12
-              ),),
-              Text("₹ ${widget.chat.price.toStringAsFixed(0)}/min",style: TextStyle(
-                  fontFamily: 'SatoshiRegular',
-                  fontSize: 12
-              ),),
+              Text(widget.chat.name,style: TextStyles.sectionTitle),
+              Text(widget.chat.type,style: TextStyles.regularTextSmall,),
+              Text(widget.chat.languages,style: TextStyles.regularTextSmall,),
+              Text("EXp: ${widget.chat.exp.toString()} Years",style: TextStyles.regularTextSmall,),
+              Text("₹ ${widget.chat.price.toStringAsFixed(0)}/min",style: TextStyles.regularTextSmall,),
             ],
           ),
-          Expanded(child: SizedBox()),
+          const Expanded(child: SizedBox()),
           Column(
             children: [
-              Icon(Icons.verified,color: Colors.green,),
+              const Icon(Icons.verified,color: Colors.green,),
               SizedBox(height: mQuery.size.height*0.03,),
               Container(
-                padding: EdgeInsets.symmetric(
+                padding: const EdgeInsets.symmetric(
                     horizontal: 12,
                     vertical: 1
                 ),
@@ -104,7 +91,7 @@ class _ChatCardState extends State<ChatCard> {
                         color: Colors.green
                     )
                 ),
-                child: Center(
+                child: const Center(
                   child: Text("Chat",style: TextStyle(
                       fontFamily: 'SatoshiMedium',
                       fontSize: 13,

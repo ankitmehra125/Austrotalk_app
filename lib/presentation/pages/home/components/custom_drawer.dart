@@ -1,4 +1,5 @@
 import 'package:austrotalk/presentation/pages/login/login_page.dart';
+import 'package:austrotalk/styles/text_style.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -21,7 +22,7 @@ class CustomDrawer extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(height: 50),
+            const SizedBox(height: 50),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16),
               child: Row(
@@ -46,10 +47,10 @@ class CustomDrawer extends StatelessWidget {
                 ],
               ),
             ),
-            SizedBox(height: 16),
+            const SizedBox(height: 16),
             Expanded(
               child: ListView(
-                physics: NeverScrollableScrollPhysics(),
+                physics: const NeverScrollableScrollPhysics(),
                 padding: EdgeInsets.zero,
                 children: [
                   GestureDetector(
@@ -70,28 +71,24 @@ class CustomDrawer extends StatelessWidget {
                       onTap: ()
                       {
                         Navigator.pushReplacement(context, MaterialPageRoute(builder: (context){
-                          return LoginPage();
+                          return const LoginPage();
                         }));
                       },
                       child: drawerItem("assets/images/drawer_images/login.svg", "Login", null, 16)),
                 ],
               ),
             ),
-            Expanded(
+            const Expanded(
               flex:0,
                 child: SizedBox()),
             Padding(
-              padding: EdgeInsets.symmetric(
+              padding: const EdgeInsets.symmetric(
                   horizontal: 16
               ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text("Also available on",style: TextStyle(
-                      fontSize: 13,
-                      fontFamily: 'SatoshiRegular',
-                      color: Colors.black
-                  ),),
+                  const Text("Also available on",style: TextStyles.regularTextSmall),
                   SizedBox(height: mQuery.size.height*0.008),
                   SizedBox(
                     width: mQuery.size.width*0.5,
@@ -110,13 +107,13 @@ class CustomDrawer extends StatelessWidget {
                   SizedBox(height: mQuery.size.height*0.016),
                   Align(
                     alignment: Alignment.center,
-                    child: Text("Version $versionNo",style: TextStyle(
+                    child: Text("Version $versionNo",style: const TextStyle(
                       fontFamily: 'SatoshiRegular',
                       color: Colors.green,
                       fontSize: 13
                     ),),
                   ),
-                  SizedBox(height: 30,)
+                  const SizedBox(height: 30,)
                 ],
               ),
             ),
@@ -140,7 +137,7 @@ class CustomDrawer extends StatelessWidget {
           child: Row(
             children: [
               SvgPicture.asset(asset, width: iconSize, color: color),
-              SizedBox(width: 16),
+              const SizedBox(width: 16),
               Text(
                 title,
                 style: const TextStyle(
@@ -162,13 +159,13 @@ class CustomDrawer extends StatelessWidget {
         width: double.infinity,
         color: Colors.transparent,
         child: Padding(
-          padding: EdgeInsets.symmetric(
+          padding: const EdgeInsets.symmetric(
             horizontal: 16
           ),
           child: Row(
             children: [
               Icon(icon, size: iconSize),
-              SizedBox(width: 16),
+              const SizedBox(width: 16),
               Text(
                 title,
                 style: const TextStyle(
